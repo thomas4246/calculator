@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css?family=Nova+Round&display=swap');
+
+:root {
+  --bg-color: linear-gradient(137deg, #dbe6ed 15%, #dae9ec 100%);
+  --main-color: #ebecf1;
+  --num-color: #373737;
+  --main-shadow: 4.5px 4.5px 9px #cbcbcb, -4.5px -4.5px 9px #ffffff;
+  --screen-shadow: inset 1.5px 1.5px 3px #cbcbcb,
+    inset -1.5px -1.5px 3px #ffffff;
+  --onClick-shadow: inset 2px 2px 4px #cbcbcb, inset -2px -2px 4px #ffffff;
+  --result-text: #5f5e5e;
+}
+
+.dark-theme {
+  --bg-color: linear-gradient(137deg, #76838c 55%, #7c9297 100%);
+  --main-color: #191a1e;
+  --num-color: whitesmoke;
+  --main-shadow: 6px 6px 12px #0e0e0e, -4px -4px 10px rgba(95, 94, 94, 0.25);
+  --screen-shadow: inset 1.5px 1.5px 3px #0e0e0e,
+    inset -1.5px -1.5px 3px #5f5e5e;
+  --onClick-shadow: inset 6px 6px 12px #0e0e0e,
+    -4px -4px 10px rgba(95, 94, 94, 0.25);
+  --result-text: #f7b731;
+}
+
+.color-theme {
+  --bg-color: linear-gradient(137deg, #dbede2 15%, #76cedf 100%);
+  --main-color: #006e7f;
+  --num-color: #e0d8b0;
+  --main-shadow: 6px 6px 12px #05434d, -4px -4px 10px rgba(95, 94, 94, 0.25);
+  --screen-shadow: inset 1.5px 1.5px 3px #05434d,
+    inset -1.5px -1.5px 3px #0491a7;
+  --onClick-shadow: inset 6px 6px 12px #05434d,
+    -4px -4px 10px rgba(95, 94, 94, 0.25);
+  --result-text: #20bf6b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Nova Round !important;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+}
+
+/* theme */
+
+.theme {
+  margin-bottom: 3%;
+  width: 135px;
+  display: inline-flex;
+}
+
+#bright,
+#dark,
+#color {
+  cursor: pointer;
+  margin: 7%;
+  width: 25px;
+  height: 25px;
+  border-radius: 85px;
+  box-shadow: 27px 27px 50px #87a2a8, -27px -27px 50px #b7dce4;
+}
+
+#bright {
+  background: linear-gradient(137deg, #b4c2cb 15%, #dae9ec 100%);
+}
+
+#dark {
+  background: linear-gradient(137deg, #4a5258 15%, #69777a 100%);
+}
+
+#color {
+  background: linear-gradient(137deg, #dbede2 15%, #76cedf 100%);
+}
+
+.calculator {
+  min-width: 273px;
+  min-height: 448px;
+
+  background: var(--main-color);
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.screen {
+  width: 233px;
+  height: 91px;
+  background-color: var(--main-color);
+  box-shadow: var(--screen-shadow);
+  border-radius: 24px 24px 10px 10px;
+  margin: 20px;
+  transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.screenContent {
+  text-align: end;
+  padding: 17px;
+  font-size: 30px;
+}
+
+#result {
+  font-size: 30px;
+  line-height: 36px;
+  margin-bottom: 5px;
+  overflow: auto;
+  user-select: all;
+}
+
+#resultText {
+  transition: color 0.5s ease-in-out;
+  cursor: copy;
+  color: var(--result-text);
+}
+
+.tooltip {
+  position: fixed;
+  height: fit-content;
+  width: fit-content;
+  background-color: whitesmoke;
+  padding: 5px 12px;
+  border-radius: 5px;
+  display: none;
+  font-size: 0.7rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.calculation {
+  font-size: 12px;
+  line-height: 14px;
+  color: rgb(153, 153, 153);
+  overflow: auto;
+  transition: color 0.5s ease-in-out;
+}
+
+.numPad {
+  width: 233px;
+  height: 296px;
+  margin: 20px 20px 20px 20px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 19px;
+  grid-row-gap: 19px;
+}
+
+.style {
+  box-shadow: var(--main-shadow);
+  border-radius: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
+    color 0.5s ease-in-out;
+}
+
+.styleOnClick {
+  box-shadow: var(--onClick-shadow);
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.circle {
+  width: 44px;
+  height: 44px;
+}
+
+.numColor {
+  color: var(--num-color);
+}
+
+.trashCan {
+  width: 15px;
+  height: 15px;
+}
+
+/* Night Mode */
+.styleNM {
+  background: #191a1e;
+
+  color: white;
+}
+
+/* Night Mode */
+
+.ariOpeColor {
+  color: #2d98da;
+}
+
+.zero {
+  width: 107px;
+  height: 44px;
+  color: #f7b731;
+  grid-area: 5 / 1 / 6 / 3;
+}
+
+.equal {
+  width: 44px;
+  height: 170px;
+  color: #20bf6b;
+  grid-area: 3 / 4 / 6 / 5;
+}
+
+#clear {
+  color: rgb(217, 101, 101);
+}
+
+footer {
+  position: absolute;
+  bottom: 5%;
+  margin-top: 5%;
+  font-size: 0.7rem;
+  text-align: center;
+  color: #203239;
+}

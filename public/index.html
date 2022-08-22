@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/public/style.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="theme">
+      <div id="bright"></div>
+      <div id="dark"></div>
+      <div id="color"></div>
+    </div>
+    <span class="tooltip">Click To Copy ✂️</span>
+    <div class="calculator">
+      <div class="screen">
+        <div class="screenContent">
+          <p id="result">
+            <span id="resultText" onclick="copy()" onmouseleave="restoreText()"
+              >0</span
+            >
+          </p>
+
+          <p class="calculation"><span id="calculationText"></span></p>
+        </div>
+      </div>
+
+      <div class="numPad">
+        <div id="clear" class="style circle">c</div>
+        <div id="division" class="style circle ariOpeColor">/</div>
+        <div id="multiplication" class="style circle ariOpeColor">x</div>
+        <div id="subtraction" class="style circle ariOpeColor">-</div>
+        <div id="num7" class="style circle numColor">7</div>
+        <div id="num8" class="style circle numColor">8</div>
+        <div id="num9" class="style circle numColor">9</div>
+        <div id="addition" class="style circle ariOpeColor">+</div>
+        <div id="num4" class="style circle numColor">4</div>
+        <div id="num5" class="style circle numColor">5</div>
+        <div id="num6" class="style circle numColor">6</div>
+        <div id="num1" class="style circle numColor">1</div>
+        <div id="num2" class="style circle numColor">2</div>
+        <div id="num3" class="style circle numColor">3</div>
+        <div id="num0" class="style zero">0</div>
+        <div id="dot" class="style circle numColor">.</div>
+        <div id="equal" class="style equal">=</div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <p>Designed & Built with 🧡</p>
+    <p>© <span id="year"></span> Thomas Lin. All rights reserved.</p>
+  </footer>
+  <script src="/public/index.js"></script>
+</html>
